@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base reset ─── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-void text-text-primary font-body;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-signal-blue/30 text-text-primary;
+  }
+
+  /* Scrollbar — minimal, dark */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/* ─── Utility classes ─── */
+@layer components {
+  .section-container {
+    @apply max-w-content mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  .border-subtle {
+    @apply border border-border;
+  }
+
+  /* Stagger animation for children */
+  .stagger-children > * {
+    @apply opacity-0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.12s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.16s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.20s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.24s; }
+  .stagger-children > *:nth-child(7) { animation-delay: 0.28s; }
+  .stagger-children > *:nth-child(8) { animation-delay: 0.32s; }
+
+  /* Hover color-invert for text links */
+  .link-invert {
+    @apply relative inline-block transition-colors duration-0;
+  }
+  .link-invert::before {
+    content: "";
+    @apply absolute inset-0 bg-text-primary scale-x-0 origin-left;
+    transition: transform 0.15s ease;
+    z-index: -1;
+  }
+  .link-invert:hover {
+    color: #050505;
+  }
+  .link-invert:hover::before {
+    @apply scale-x-100;
+  }
+
+  /* Magnetic button base */
+  .btn-magnetic {
+    @apply relative inline-flex items-center gap-2 px-6 py-3
+           border border-border text-text-primary font-mono text-caption
+           transition-all duration-200;
+  }
+  .btn-magnetic:hover {
+    @apply border-signal-blue text-signal-blue;
+  }
+}
+
+/* ─── Reveal animation trigger ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Code block styling ─── */
+.code-block {
+  @apply bg-surface border border-border rounded-sm p-4 font-mono text-micro
+         text-func-green overflow-x-auto;
+}
+
+/* ─── Ticker pause on hover ─── */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
