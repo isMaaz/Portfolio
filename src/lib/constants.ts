@@ -2,15 +2,15 @@ import { Project, SkillCluster, BlogEntry } from "@/types";
 
 /* ─── Personal info ─── */
 export const PERSONAL = {
-  name: "Your Name",
+  name: "Muhammad Maaz Akram",
   title: "AI Engineer & Systems Architect",
   tagline: "Building intelligent systems that bridge data and decision-making.",
   subtitle: "AI Student @ Air Uni  ·  Automation Engineer @ Auxth",
   status: "Available for Research & Engineering Roles",
-  github: "https://github.com/YOUR_USERNAME",
-  githubUsername: "YOUR_USERNAME",
-  email: "your.email@example.com",
-  linkedin: "https://linkedin.com/in/YOUR_PROFILE",
+  github: "https://github.com/MaazAkram76",
+  githubUsername: "MaazAkram76",
+  email: "231192@students.au.edu.pk",
+  linkedin: "https://www.linkedin.com/in/maaz-akram-b45713246/",
 } as const;
 
 /* ─── Projects ─── */
