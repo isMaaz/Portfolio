@@ -17,6 +17,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "ss02", "cv01";
   }
 
   body {
@@ -25,29 +26,33 @@
   }
 
   ::selection {
-    @apply bg-signal-blue/30 text-text-primary;
+    @apply bg-accent/15 text-text-primary;
   }
 
   /* Scrollbar — minimal, dark */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
   ::-webkit-scrollbar-track {
-    background: #050505;
+    background: #000;
   }
   ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 3px;
+    background: #222;
+    border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #444;
   }
 }
 
 /* ─── Utility classes ─── */
 @layer components {
   .section-container {
-    @apply max-w-content mx-auto px-6 md:px-8 lg:px-12;
+    @apply max-w-content mx-auto px-6 md:px-10 lg:px-16;
+  }
+
+  .section-label {
+    @apply font-mono text-label uppercase tracking-widest text-text-secondary mb-6;
   }
 
   .border-subtle {
@@ -79,20 +84,29 @@
     z-index: -1;
   }
   .link-invert:hover {
-    color: #050505;
+    color: #000;
   }
   .link-invert:hover::before {
     @apply scale-x-100;
   }
 
-  /* Magnetic button base */
-  .btn-magnetic {
-    @apply relative inline-flex items-center gap-2 px-6 py-3
-           border border-border text-text-primary font-mono text-caption
-           transition-all duration-200;
+  /* Button — Palantir-style: thin, light, understated */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5
+           bg-accent text-void font-sans text-caption font-normal
+           tracking-tight transition-all duration-200;
   }
-  .btn-magnetic:hover {
-    @apply border-signal-blue text-signal-blue;
+  .btn-primary:hover {
+    @apply opacity-80;
+  }
+
+  .btn-outline {
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5
+           border border-border text-text-primary font-sans text-caption font-normal
+           tracking-tight transition-all duration-200;
+  }
+  .btn-outline:hover {
+    @apply border-text-secondary;
   }
 }
 
@@ -100,7 +114,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 .reveal.visible {
   opacity: 1;

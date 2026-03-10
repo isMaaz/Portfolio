@@ -1,12 +1,14 @@
-import { Project, SkillCluster, BlogEntry } from "@/types";
+import { Project, SkillCluster, ResearchPaper } from "@/types";
 
 /* ─── Personal info ─── */
 export const PERSONAL = {
   name: "Muhammad Maaz Akram",
-  title: "AI Engineer & Systems Architect",
-  tagline: "Building intelligent systems that bridge data and decision-making.",
-  subtitle: "AI Student @ Air Uni  ·  Automation Engineer @ Auxth",
-  status: "Available for Research & Engineering Roles",
+  title: "AI Student & Automation Engineer",
+  tagline: "AI Student. Automation Engineer.\nSystems Builder.",
+  intro: "I build intelligent automation systems, AI-driven workflows, and scalable integrations using APIs and modern automation tools.",
+  subtitle: "BS Artificial Intelligence @ Air University · 6th Semester",
+  location: "Islamabad, Pakistan",
+  status: "Available for Projects & Collaborations",
   github: "https://github.com/MaazAkram76",
   githubUsername: "MaazAkram76",
   email: "231192@students.au.edu.pk",
@@ -16,96 +18,56 @@ export const PERSONAL = {
 /* ─── Projects ─── */
 export const PROJECTS: Project[] = [
   {
-    id: "eeg-seizure",
-    name: "EEG Seizure Detection Pipeline",
-    domain: "Biomedical Signal Processing",
-    stack: ["Python", "PyTorch", "SciPy", "Pandas"],
+    id: "outreach-automation",
+    name: "Multi-Channel Outreach Automation System",
+    domain: "Marketing Automation",
+    stack: ["n8n", "GoHighLevel", "LinkedIn API", "Email Marketing"],
     year: 2025,
-    summary: "95% accuracy on seizure detection from raw EEG signals.",
+    summary: "End-to-end outreach automation integrating LinkedIn, email campaigns, and AI-powered replies.",
     description:
-      "End-to-end pipeline for preprocessing multi-channel EEG recordings, extracting spectral and temporal features, and classifying seizure events using a 1D-CNN + LSTM architecture. Achieved 95% accuracy on the CHB-MIT dataset with real-time inference capability.",
-    codeView: `# Pipeline overview
-def seizure_pipeline(eeg_signal):
-    # 1. Bandpass filter (0.5–50 Hz)
-    filtered = bandpass_filter(eeg_signal, lo=0.5, hi=50)
-    
-    # 2. Feature extraction — spectral power + wavelet coefficients
-    features = extract_features(filtered)
-    
-    # 3. Inference — 1D-CNN + BiLSTM classifier
-    prediction = model.predict(features)  # → {seizure: 0.95, normal: 0.05}
-    
-    return prediction`,
+      "Built a full outreach automation system that integrates LinkedIn outreach, automated email marketing campaigns, and AI-powered email reply systems. The pipeline connects n8n workflows with GoHighLevel to handle lead capture, multi-channel engagement, and automated follow-ups — replacing manual outreach with a scalable, hands-off system.",
+    features: [
+      "Automated LinkedIn outreach",
+      "Email campaign automation",
+      "AI-powered automated email replies",
+      "n8n × GoHighLevel integration",
+      "Multi-channel workflow orchestration",
+    ],
     link: "#",
   },
   {
-    id: "auxth-automation",
-    name: "Workflow Automation Engine",
-    domain: "Automation & DevOps",
-    stack: ["n8n", "FastAPI", "Docker", "PostgreSQL"],
+    id: "social-media-automation",
+    name: "AI Social Media Content Automation",
+    domain: "Content Automation",
+    stack: ["AI/LLM", "GoHighLevel", "Facebook API", "Instagram API", "LinkedIn API"],
     year: 2025,
-    summary: "Reduced manual processing latency by 40% at Auxth.",
+    summary: "AI generates content calendars, creates posts, and auto-publishes across 3 platforms.",
     description:
-      "Designed and deployed event-driven automation workflows using n8n and FastAPI microservices. Integrated Slack, Notion, and internal APIs to orchestrate multi-step business processes. Containerized with Docker for reproducible deployments.",
-    codeView: `# Workflow trigger → process → notify
-@app.post("/webhook/process")
-async def handle_event(payload: EventPayload):
-    # 1. Validate & enrich incoming data
-    enriched = await enrich_payload(payload)
-    
-    # 2. Execute business logic pipeline
-    result = await pipeline.run(enriched)  # latency: -40%
-    
-    # 3. Fan-out notifications
-    await notify(channels=["slack", "notion"], data=result)
-    
-    return {"status": "processed", "id": result.id}`,
+      "An end-to-end automation system where a user provides their brand kit and business website. The AI then generates a 1–2 month content calendar, creates static content for each post, and schedules & publishes automatically across Facebook, Instagram, and LinkedIn — fully hands-free content pipeline.",
+    features: [
+      "Brand kit & website analysis",
+      "AI-generated content calendar (1–2 months)",
+      "Static content creation",
+      "Auto-scheduling & posting",
+      "Facebook, Instagram, LinkedIn automation",
+    ],
     link: "#",
   },
   {
-    id: "transformer-study",
-    name: "Transformer Architecture Deep Dive",
-    domain: "NLP / Deep Learning",
-    stack: ["PyTorch", "Hugging Face", "LaTeX"],
-    year: 2024,
-    summary: "From-scratch implementation of multi-head attention and positional encoding.",
-    description:
-      "Comprehensive implementation and analysis of the Transformer architecture from 'Attention Is All You Need.' Built multi-head self-attention, positional encoding (sinusoidal + learned), and layer normalization from scratch. Benchmarked against Hugging Face reference implementations.",
-    codeView: `class MultiHeadAttention(nn.Module):
-    def __init__(self, d_model=512, n_heads=8):
-        super().__init__()
-        self.d_k = d_model // n_heads
-        self.W_q = nn.Linear(d_model, d_model)
-        self.W_k = nn.Linear(d_model, d_model)
-        self.W_v = nn.Linear(d_model, d_model)
-    
-    def forward(self, Q, K, V, mask=None):
-        # Scaled dot-product attention
-        scores = (Q @ K.transpose(-2, -1)) / math.sqrt(self.d_k)
-        if mask is not None:
-            scores = scores.masked_fill(mask == 0, -1e9)
-        attn = F.softmax(scores, dim=-1)
-        return attn @ V`,
-    link: "#",
-  },
-  {
-    id: "krr-ontology",
-    name: "Knowledge Representation System",
-    domain: "KRR / Semantic Web",
-    stack: ["Protégé", "SPARQL", "OWL", "Python"],
+    id: "calendar-booking",
+    name: "Automated Calendar Booking & Reminder System",
+    domain: "Workflow Automation",
+    stack: ["GoHighLevel", "Workflow Automation", "Calendars"],
     year: 2025,
-    summary: "Ontology-driven reasoning engine for domain knowledge inference.",
+    summary: "Automated appointment scheduling, confirmations, and reminder workflows.",
     description:
-      "Built an OWL ontology for a specialized domain using Protégé, integrated SPARQL endpoints for querying, and implemented description logic reasoning for automated inference. Demonstrates formal knowledge engineering principles.",
-    codeView: `# SPARQL query — infer all instances of a class via reasoning
-PREFIX ont: <http://example.org/ontology#>
-
-SELECT ?entity ?type WHERE {
-    ?entity rdf:type ?type .
-    ?type rdfs:subClassOf* ont:IntelligentAgent .
-    FILTER(?type != owl:Nothing)
-}
-ORDER BY ?type`,
+      "Built an automation that handles the entire appointment scheduling lifecycle — from booking confirmations to automated reminders — using GoHighLevel workflows. Eliminates missed appointments and manual follow-up with intelligent reminder sequences.",
+    features: [
+      "Automated booking confirmations",
+      "Smart reminder sequences",
+      "GoHighLevel workflow automation",
+      "Reduced no-show rates",
+    ],
     link: "#",
   },
 ];
@@ -113,74 +75,75 @@ ORDER BY ?type`,
 /* ─── Skill Clusters ─── */
 export const SKILL_CLUSTERS: SkillCluster[] = [
   {
-    label: "Inference",
-    description: "Model development & training pipelines",
-    skills: ["PyTorch", "TensorFlow", "Hugging Face", "scikit-learn", "ONNX"],
+    label: "Automation",
+    description: "Workflow & system automation platforms",
+    skills: ["n8n", "GoHighLevel", "Zapier", "Make (Integromat)"],
   },
   {
-    label: "Logic",
-    description: "Formal reasoning & knowledge systems",
-    skills: ["KRR", "SPARQL", "Protégé", "OWL Ontologies", "Description Logic"],
+    label: "Programming",
+    description: "Core languages & frameworks",
+    skills: ["Python", "TypeScript", "FastAPI", "Next.js"],
   },
   {
-    label: "Data",
-    description: "Processing, analysis & visualization",
-    skills: ["Pandas", "NumPy", "SciPy", "Matplotlib", "SQL"],
+    label: "AI / ML",
+    description: "Research & applied machine learning",
+    skills: ["LLM Research", "Machine Learning", "NLP", "Transformers", "PyTorch"],
   },
   {
-    label: "Deployment",
-    description: "Infrastructure & delivery",
-    skills: ["Docker", "FastAPI", "n8n", "Git", "Linux", "CI/CD"],
+    label: "Engineering",
+    description: "Integration & infrastructure",
+    skills: ["API Integration", "System Design", "Workflow Design", "Docker", "Git"],
   },
   {
-    label: "Language",
-    description: "Programming & markup",
-    skills: ["Python", "TypeScript", "C++", "LaTeX", "Bash"],
+    label: "Platforms",
+    description: "Marketing & business tools",
+    skills: ["Facebook API", "Instagram API", "LinkedIn API", "Email Marketing"],
   },
 ];
 
-/* ─── Blog / Research entries ─── */
-export const BLOG_ENTRIES: BlogEntry[] = [
+/* ─── Research Papers ─── */
+export const RESEARCH_PAPERS: ResearchPaper[] = [
   {
-    date: "2025-12",
-    title: "Why Positional Encoding Matters More Than You Think",
-    excerpt: "Dissecting sinusoidal vs. learned positional encodings and their impact on sequence modeling performance.",
-    slug: "positional-encoding",
+    title: "A Little Less Conversation, a Little More Action, Please",
+    subtitle: "Investigating the Physical Common-Sense of LLMs in a 3D Embodied Environment",
+    authors: "Matteo Borg et al.",
+    year: 2024,
+    topic: "Embodied AI / LLM Reasoning",
+    slug: "llm-embodied-commonsense",
   },
   {
-    date: "2025-10",
-    title: "Attention Is Not Explanation: A Critical Reading",
-    excerpt: "Exploring the gap between attention weights and true feature importance in Transformer models.",
-    slug: "attention-explanation",
+    title: "Attention Is All You Need",
+    subtitle: "The Transformer architecture that changed NLP",
+    authors: "Vaswani et al.",
+    year: 2017,
+    topic: "NLP / Transformer Architecture",
+    slug: "attention-is-all-you-need",
   },
   {
-    date: "2025-08",
-    title: "From Ontologies to Neural Networks: Bridging Symbolic and Sub-Symbolic AI",
-    excerpt: "How Knowledge Representation and Reasoning (KRR) complements modern deep learning approaches.",
-    slug: "krr-neural-bridge",
-  },
-  {
-    date: "2025-05",
-    title: "Building Reliable Automation Pipelines with n8n and FastAPI",
-    excerpt: "Lessons from production: error handling, idempotency, and observability in workflow automation.",
-    slug: "automation-pipelines",
+    title: "Recursive Language Models",
+    subtitle: "Exploring recursive structures in language modeling",
+    authors: "Various",
+    year: 2024,
+    topic: "Language Modeling",
+    slug: "recursive-language-models",
   },
 ];
 
 /* ─── Footer ticker items ─── */
 export const TICKER_ITEMS = [
-  "EPOCH: 2026",
-  "LOC: Islamabad",
-  "STATUS: Studying KRR",
-  "STACK: PyTorch + FastAPI",
-  "FOCUS: Transformers & NLP",
-  "MODE: Research & Engineering",
+  "LOCATION: Islamabad",
+  "STUDYING: BS AI @ Air University",
+  "SEMESTER: 6th",
+  "STACK: n8n + GoHighLevel + Python",
+  "FOCUS: AI × Automation",
+  "STATUS: Open to Work",
 ] as const;
 
 /* ─── Navigation links ─── */
 export const NAV_LINKS = [
-  { label: "Works", href: "#works" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Research", href: "#research" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ] as const;

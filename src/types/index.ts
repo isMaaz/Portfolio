@@ -7,10 +7,8 @@ export interface Project {
   stack: string[];
   year: number;
   summary: string;
-  /** Plain-English description */
   description: string;
-  /** Pseudo-code / code representation */
-  codeView: string;
+  features?: string[];
   link?: string;
 }
 
@@ -20,10 +18,12 @@ export interface SkillCluster {
   skills: string[];
 }
 
-export interface BlogEntry {
-  date: string;
+export interface ResearchPaper {
   title: string;
-  excerpt: string;
+  subtitle: string;
+  authors: string;
+  year: number;
+  topic: string;
   slug: string;
 }
 

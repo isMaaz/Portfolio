@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { NAV_LINKS, PERSONAL } from "@/lib/constants";
 
 /**
- * Fixed top navigation bar — minimal, transparent until scrolled.
+ * Fixed top navigation — minimal, Palantir-style.
  */
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,26 +19,26 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-void/90 backdrop-blur-md border-b border-border"
+          ? "bg-void/95 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="section-container flex items-center justify-between h-14">
+      <div className="section-container flex items-center justify-between h-16">
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-heading font-semibold text-body text-text-primary hover:text-signal-blue transition-colors"
+          className="font-sans font-normal text-body text-text-primary tracking-tight hover:opacity-70 transition-opacity"
         >
           {PERSONAL.name}
         </a>
 
         {/* Links */}
-        <div className="hidden sm:flex items-center gap-8">
+        <div className="hidden sm:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-mono text-micro text-text-secondary hover:text-text-primary transition-colors"
+              className="font-sans text-caption text-text-secondary hover:text-text-primary transition-colors"
             >
               {link.label}
             </a>
@@ -47,7 +47,7 @@ export default function Navigation() {
 
         {/* Mobile — minimal indicator */}
         <div className="sm:hidden font-mono text-micro text-text-secondary">
-          {PERSONAL.title}
+          Portfolio
         </div>
       </div>
     </nav>

@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-/* ─── Font loading ─── */
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
+/* ─── Font loading (Palantir-inspired: Inter + IBM Plex) ─── */
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
@@ -25,23 +18,23 @@ const jetbrainsMono = JetBrains_Mono({
 
 /* ─── Metadata ─── */
 export const metadata: Metadata = {
-  title: "Portfolio — AI Engineer & Systems Architect",
+  title: "Muhammad Maaz Akram — AI Student & Automation Engineer",
   description:
-    "Building intelligent systems that bridge data and decision-making. AI Student @ Air Uni | Automation Engineer @ Auxth.",
+    "I build intelligent automation systems, AI-driven workflows, and scalable integrations using APIs and modern automation tools.",
   keywords: [
     "AI Engineer",
-    "Machine Learning",
-    "NLP",
     "Automation",
+    "n8n",
+    "GoHighLevel",
+    "Workflow Automation",
+    "API Integration",
     "Portfolio",
-    "Knowledge Representation",
-    "EEG Analysis",
-    "Transformers",
+    "AI Student",
   ],
   openGraph: {
-    title: "Portfolio — AI Engineer & Systems Architect",
+    title: "Muhammad Maaz Akram — AI Student & Automation Engineer",
     description:
-      "Building intelligent systems that bridge data and decision-making.",
+      "I build intelligent automation systems, AI-driven workflows, and scalable integrations.",
     type: "website",
   },
 };
@@ -55,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${ibmPlexMono.variable}`}
     >
       <body>{children}</body>
     </html>

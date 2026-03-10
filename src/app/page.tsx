@@ -3,16 +3,18 @@ import Hero from "@/components/Hero";
 import SelectedWorks from "@/components/SelectedWorks";
 import KnowledgeGraph from "@/components/KnowledgeGraph";
 import ResearchLog from "@/components/ResearchLog";
+import AboutMe from "@/components/AboutMe";
+import Contact from "@/components/Contact";
 import TrainingFooter from "@/components/TrainingFooter";
 
 /**
  * Root page — composes all portfolio sections.
- * Structure follows a "Technical Dossier" layout:
- *   1. Terminal Hero
- *   2. Selected Works (Index)
- *   3. Knowledge Graph (Skills)
- *   4. Research Log
- *   5. Training Footer
+ *   1. Hero
+ *   2. Projects
+ *   3. Skills
+ *   4. Research
+ *   5. About Me
+ *   6. Contact
  */
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
         <SelectedWorks />
         <KnowledgeGraph />
         <ResearchLog />
+        <AboutMe />
+        <Contact />
       </main>
       <TrainingFooter />
     </>
