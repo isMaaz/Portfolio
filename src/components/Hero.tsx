@@ -1,7 +1,7 @@
 "use client";
 
 import { PERSONAL } from "@/lib/constants";
-import MeshBackground from "./MeshBackground";
+import NeuralBackground from "./NeuralBackground";
 
 /**
  * Section 1 — Hero
@@ -15,7 +15,7 @@ export default function Hero() {
     >
       {/* ── Static mesh background ── */}
       <div className="absolute inset-0 overflow-hidden">
-        <MeshBackground />
+        <NeuralBackground />
       </div>
 
       {/* ── Content ── */}

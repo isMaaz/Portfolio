@@ -26,7 +26,7 @@ export default function Navigation() {
       <div className="section-container flex items-center justify-between h-16">
         {/* Logo / Name */}
         <a
-          href="#hero"
+          href="/"
           className="font-sans font-normal text-body text-text-primary tracking-tight hover:opacity-70 transition-opacity"
         >
           {PERSONAL.name}

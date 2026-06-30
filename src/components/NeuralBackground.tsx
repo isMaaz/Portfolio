@@ -4,11 +4,11 @@ import { useEffect, useRef, useCallback } from "react";
 
 /* ─── Configuration ─── */
 const NODE_COUNT = 80;
-const CONNECTION_DIST = 140;
+const CONNECTION_DIST = 180;
 const MOUSE_RADIUS = 160;
-const NODE_SPEED = 0.3;
-const NODE_COLOR = "rgba(37, 99, 235, 0.35)"; // signal-blue at low alpha
-const EDGE_COLOR_BASE = [37, 99, 235]; // signal-blue RGB
+const NODE_SPEED = 0.22;
+const NODE_COLOR = "rgba(255, 255, 255, 0.26)";
+const EDGE_COLOR_BASE = [255, 255, 255];
 
 interface Node {
   x: number;
@@ -83,7 +83,7 @@ export default function NeuralBackground() {
         const dy = nodes[i].y - nodes[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < CONNECTION_DIST) {
-          const alpha = (1 - dist / CONNECTION_DIST) * 0.2;
+          const alpha = (1 - dist / CONNECTION_DIST) * 0.14;
           ctx.strokeStyle = `rgba(${EDGE_COLOR_BASE.join(",")},${alpha})`;
           ctx.lineWidth = 0.5;
           ctx.beginPath();

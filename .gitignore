@@ -6,3 +6,6 @@ npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# Raw source screenshots — deployed copies live in public/ghl
+Images/

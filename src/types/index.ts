@@ -27,9 +27,34 @@ export interface ResearchPaper {
   slug: string;
 }
 
+export interface GHLService {
+  title: string;
+  description: string;
+  capabilities: string[];
+}
+
+export interface GHLShowcase {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  /** "tall" for full-page funnel/landing screenshots, "wide" for diagrams/mockups */
+  aspect: "tall" | "wide";
+  tags?: string[];
+}
+
 export interface GitHubCommit {
   message: string;
   repo: string;
   date: string;
   sha: string;
+}
+
+export interface DuolingoStats {
+  username: string;
+  streak: number;
+  totalXp?: number;
+  learningLanguages?: string[];
+  updatedAt: string;
 }

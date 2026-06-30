@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import LiveActivity from "@/components/LiveActivity";
 import SelectedWorks from "@/components/SelectedWorks";
+import GhlSpotlight from "@/components/GhlSpotlight";
 import KnowledgeGraph from "@/components/KnowledgeGraph";
 import ResearchLog from "@/components/ResearchLog";
 import AboutMe from "@/components/AboutMe";
@@ -22,7 +24,9 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <LiveActivity />
         <SelectedWorks />
+        <GhlSpotlight />
         <KnowledgeGraph />
         <ResearchLog />
         <AboutMe />

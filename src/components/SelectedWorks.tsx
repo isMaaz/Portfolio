@@ -22,7 +22,7 @@ export default function SelectedWorks() {
             What I&apos;ve Built
           </h2>
           <p className="font-sans text-body text-text-secondary mt-4 max-w-2xl">
-            Automation systems, AI-driven workflows, and scalable integrations.
+            Automation systems, AI workflows, full-stack coursework, and applied ML projects found across my Air University folders.
           </p>
         </div>
 
