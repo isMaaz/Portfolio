@@ -424,4 +424,34 @@ export const GHL_WORKFLOWS: GHLShowcase[] = [
     aspect: "tall",
     tags: ["n8n", "LLM", "Webhooks"],
   },
+  {
+    id: "wf-n8n-ai-agent-reply",
+    title: "RAG AI Agent Reply Engine",
+    category: "AI Outreach",
+    description:
+      "A webhook-triggered n8n AI Agent backed by an OpenAI chat model, conversation memory, and a Supabase vector store — generating context-aware replies and posting them straight back into GoHighLevel.",
+    image: "/ghl/wf-n8n-ai-agent-reply.png",
+    aspect: "wide",
+    tags: ["AI Agent", "RAG", "Supabase", "GHL"],
+  },
+  {
+    id: "wf-apollo-lead-gen",
+    title: "Apollo Lead-Gen → GHL CRM Pipeline",
+    category: "Lead Generation",
+    description:
+      "An n8n pipeline that pulls targeted leads from the Apollo Search API, enriches and transforms them in code, then logs them to Sheets and pushes each contact directly into the GoHighLevel CRM.",
+    image: "/ghl/wf-apollo-lead-gen.png",
+    aspect: "wide",
+    tags: ["Apollo API", "Enrichment", "CRM Sync"],
+  },
+  {
+    id: "wf-social-content-automation",
+    title: "AI Social Content Engine",
+    category: "Content Automation",
+    description:
+      "A scheduled n8n workflow that plans content, generates posts and images with AI, stores assets in Drive and the GHL media library, then auto-publishes to Facebook, Instagram, Pinterest, Bluesky, and LinkedIn via the Social Planner.",
+    image: "/ghl/wf-social-content-automation.png",
+    aspect: "wide",
+    tags: ["AI Content", "Social Planner", "Multi-Platform"],
+  },
 ];
