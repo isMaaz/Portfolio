@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import "./globals.css";
 
-/* ─── Font loading (Palantir-inspired: Inter + IBM Plex) ─── */
-const inter = Inter({
+/* ─── Font loading (Courier test — monospace across the whole site) ─── */
+const courier = Courier_Prime({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500"],
+  weight: ["400", "700"],
 });
 
 /* ─── Metadata ─── */
@@ -48,8 +42,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${ibmPlexMono.variable}`}
+      className={courier.variable}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Apply saved theme before paint to avoid a flash of the wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:'dark';}catch(e){document.documentElement.dataset.theme='dark';}})();`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

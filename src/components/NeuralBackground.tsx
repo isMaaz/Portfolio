@@ -7,8 +7,15 @@ const NODE_COUNT = 80;
 const CONNECTION_DIST = 180;
 const MOUSE_RADIUS = 160;
 const NODE_SPEED = 0.22;
-const NODE_COLOR = "rgba(255, 255, 255, 0.26)";
-const EDGE_COLOR_BASE = [255, 255, 255];
+
+/* Read the theme-driven particle color (space-separated RGB) from CSS. */
+function readGraphRGB(): string {
+  if (typeof window === "undefined") return "255, 255, 255";
+  const raw = getComputedStyle(document.documentElement)
+    .getPropertyValue("--graph")
+    .trim();
+  return raw ? raw.replace(/\s+/g, ", ") : "255, 255, 255";
+}
 
 interface Node {
   x: number;
@@ -27,6 +34,7 @@ export default function NeuralBackground() {
   const mouseRef = useRef({ x: -9999, y: -9999 });
   const nodesRef = useRef<Node[]>([]);
   const rafRef = useRef<number>(0);
+  const graphRGBRef = useRef("255, 255, 255");
 
   /* ── Initialize nodes ── */
   const initNodes = useCallback((w: number, h: number) => {
@@ -53,6 +61,7 @@ export default function NeuralBackground() {
     const { width: w, height: h } = canvas;
     const nodes = nodesRef.current;
     const mouse = mouseRef.current;
+    const rgb = graphRGBRef.current;
 
     ctx.clearRect(0, 0, w, h);
 
@@ -84,7 +93,7 @@ export default function NeuralBackground() {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < CONNECTION_DIST) {
           const alpha = (1 - dist / CONNECTION_DIST) * 0.14;
-          ctx.strokeStyle = `rgba(${EDGE_COLOR_BASE.join(",")},${alpha})`;
+          ctx.strokeStyle = `rgba(${rgb}, ${alpha})`;
           ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -95,7 +104,7 @@ export default function NeuralBackground() {
     }
 
     // Draw nodes
-    ctx.fillStyle = NODE_COLOR;
+    ctx.fillStyle = `rgba(${rgb}, 0.26)`;
     for (const node of nodes) {
       ctx.beginPath();
       ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
@@ -129,6 +138,16 @@ export default function NeuralBackground() {
       mouseRef.current = { x: -9999, y: -9999 };
     };
 
+    /* Track theme changes so particles stay visible in both modes */
+    graphRGBRef.current = readGraphRGB();
+    const themeObserver = new MutationObserver(() => {
+      graphRGBRef.current = readGraphRGB();
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
     resize();
     window.addEventListener("resize", resize);
     canvas.addEventListener("mousemove", handleMouse);
@@ -136,6 +155,7 @@ export default function NeuralBackground() {
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
+      themeObserver.disconnect();
       window.removeEventListener("resize", resize);
       canvas.removeEventListener("mousemove", handleMouse);
       canvas.removeEventListener("mouseleave", handleMouseLeave);

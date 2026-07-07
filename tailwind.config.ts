@@ -8,23 +8,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        void: "#000000",
-        surface: "#0a0a0a",
-        "surface-hover": "#111111",
-        "text-primary": "#FAFAFA",
-        "text-secondary": "#71717A",
-        "accent": "#FAFAFA",
-        "accent-muted": "rgba(250, 250, 250, 0.08)",
-        "signal-blue": "#FAFAFA",
-        "func-green": "#22C55E",
-        border: "#1E1E1E",
-        "border-hover": "#2E2E2E",
+        void: "rgb(var(--void) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        "surface-hover": "rgb(var(--surface-hover) / <alpha-value>)",
+        "text-primary": "rgb(var(--text-primary) / <alpha-value>)",
+        "text-secondary": "rgb(var(--text-secondary) / <alpha-value>)",
+        "accent": "rgb(var(--accent) / <alpha-value>)",
+        "accent-muted": "rgb(var(--accent) / 0.08)",
+        "signal-blue": "rgb(var(--signal-blue) / <alpha-value>)",
+        "func-green": "rgb(var(--func-green) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
+        "border-hover": "rgb(var(--border-hover) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
-        heading: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
-        body: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "IBM Plex Mono", "monospace"],
+        sans: ["var(--font-sans)", "Courier New", "monospace"],
+        heading: ["var(--font-sans)", "Courier New", "monospace"],
+        body: ["var(--font-sans)", "Courier New", "monospace"],
+        mono: ["var(--font-mono)", "Courier New", "monospace"],
       },
       fontSize: {
         /* Palantir-style: light weight, very tight tracking, large sizes */
@@ -47,7 +47,7 @@ const config: Config = {
         "content": "1200px",
       },
       borderColor: {
-        DEFAULT: "#1E1E1E",
+        DEFAULT: "rgb(var(--border) / <alpha-value>)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",

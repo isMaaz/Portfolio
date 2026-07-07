@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { NAV_LINKS, PERSONAL } from "@/lib/constants";
+import ThemeToggle from "./ThemeToggle";
 
 /**
  * Fixed top navigation — minimal, Palantir-style.
@@ -43,11 +44,12 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
-        {/* Mobile — minimal indicator */}
-        <div className="sm:hidden font-mono text-micro text-text-secondary">
-          Portfolio
+        {/* Mobile — theme toggle */}
+        <div className="sm:hidden">
+          <ThemeToggle />
         </div>
       </div>
     </nav>

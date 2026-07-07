@@ -2,6 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Theme tokens (space-separated RGB channels for Tailwind alpha support) ─── */
+:root,
+[data-theme="dark"] {
+  --void: 0 0 0;
+  --surface: 10 10 10;
+  --surface-hover: 17 17 17;
+  --text-primary: 250 250 250;
+  --text-secondary: 113 113 122;
+  --accent: 250 250 250;
+  --signal-blue: 250 250 250;
+  --func-green: 34 197 94;
+  --border: 30 30 30;
+  --border-hover: 46 46 46;
+
+  /* Canvas graph particles */
+  --graph: 255 255 255;
+
+  /* Scrollbar */
+  --scrollbar-track: 0 0 0;
+  --scrollbar-thumb: 34 34 34;
+  --scrollbar-thumb-hover: 68 68 68;
+
+  /* Both sans + mono resolve to the Courier test face */
+  --font-mono: var(--font-sans);
+}
+
+[data-theme="light"] {
+  --void: 255 255 255;
+  --surface: 245 245 246;
+  --surface-hover: 235 235 238;
+  --text-primary: 9 9 11;
+  --text-secondary: 82 82 91;
+  --accent: 9 9 11;
+  --signal-blue: 37 99 235;
+  --func-green: 22 163 74;
+  --border: 226 226 230;
+  --border-hover: 200 200 206;
+
+  /* Canvas graph particles — dark on light */
+  --graph: 24 24 27;
+
+  /* Scrollbar */
+  --scrollbar-track: 245 245 246;
+  --scrollbar-thumb: 212 212 216;
+  --scrollbar-thumb-hover: 161 161 170;
+}
+
 /* ─── Base reset ─── */
 @layer base {
   *,
@@ -23,6 +70,7 @@
   body {
     @apply bg-void text-text-primary font-body;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
@@ -34,14 +82,14 @@
     width: 4px;
   }
   ::-webkit-scrollbar-track {
-    background: #000;
+    background: rgb(var(--scrollbar-track));
   }
   ::-webkit-scrollbar-thumb {
-    background: #222;
+    background: rgb(var(--scrollbar-thumb));
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: rgb(var(--scrollbar-thumb-hover));
   }
 }
 
@@ -84,7 +132,7 @@
     z-index: -1;
   }
   .link-invert:hover {
-    color: #000;
+    color: rgb(var(--void));
   }
   .link-invert:hover::before {
     @apply scale-x-100;

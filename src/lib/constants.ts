@@ -264,7 +264,6 @@ export const GHL = {
   tagline: "GoHighLevel\nFunnels, Automation & AI Systems.",
   intro:
     "I design and build complete GoHighLevel ecosystems — high-converting sales funnels, landing pages, end-to-end workflow automations, appointment systems, and AI-powered communication layers that turn leads into booked calls and paying clients.",
-  fiverr: "https://www.fiverr.com/muhammadmaaza",
   stats: [
     { value: "20+", label: "Funnels & Landing Pages Built" },
     { value: "30+", label: "Automation Workflows Shipped" },

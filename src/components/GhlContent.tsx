@@ -56,13 +56,8 @@ export default function GhlContent() {
           </p>
 
           <div className="flex flex-wrap items-center gap-5 pt-10">
-            <a
-              href={GHL.fiverr}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <span>Hire Me on Fiverr</span>
+            <a href={`mailto:${PERSONAL.email}`} className="btn-primary">
+              <span>Get in Touch</span>
               <span aria-hidden="true">→</span>
             </a>
             <a href="#ghl-funnels" className="btn-outline">
@@ -155,17 +150,17 @@ export default function GhlContent() {
             wire it, and make it convert.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5 pt-10">
-            <a
-              href={GHL.fiverr}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <span>Hire Me on Fiverr</span>
+            <a href={`mailto:${PERSONAL.email}`} className="btn-primary">
+              <span>Email Me</span>
               <span aria-hidden="true">→</span>
             </a>
-            <a href={`mailto:${PERSONAL.email}`} className="btn-outline">
-              Email Me
+            <a
+              href={PERSONAL.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+            >
+              Connect on LinkedIn
             </a>
           </div>
         </div>
@@ -255,12 +250,12 @@ function Gallery({
   onOpen: (item: GHLShowcase) => void;
 }) {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+    <div className="flex flex-wrap justify-center gap-6">
       {items.map((item) => (
         <button
           key={item.id}
           onClick={() => onOpen(item)}
-          className="group text-left bg-void hover:bg-surface-hover/40 transition-colors flex flex-col"
+          className="group text-left bg-void border border-border hover:border-border-hover hover:bg-surface-hover/40 transition-colors flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
         >
           {/* Image viewport — shows the most representative region of each asset */}
           <div className="relative h-72 overflow-hidden bg-surface border-b border-border">
