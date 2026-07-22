@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PROJECTS } from "@/lib/constants";
 import { useInView } from "@/hooks/useInView";
+import ProjectDemo from "./ProjectDemo";
 
 /**
  * Section 2 — Projects
@@ -18,7 +19,7 @@ export default function SelectedWorks() {
         {/* Section header */}
         <div className="mb-16">
           <p className="section-label">Projects</p>
-          <h2 className="font-sans text-h1 font-light text-text-primary">
+          <h2 className="font-serif text-h1 font-light text-text-primary">
             What I&apos;ve Built
           </h2>
           <p className="font-sans text-body text-text-secondary mt-4 max-w-2xl">
@@ -48,7 +49,7 @@ export default function SelectedWorks() {
                         <span className="font-mono text-micro text-text-secondary">
                           {String(idx + 1).padStart(2, "0")}
                         </span>
-                        <h3 className="font-sans text-h2 font-light text-text-primary group-hover:opacity-70 transition-opacity">
+                        <h3 className="font-serif text-h2 font-light text-text-primary group-hover:opacity-70 transition-opacity">
                           {project.name}
                         </h3>
                       </div>
@@ -86,7 +87,7 @@ export default function SelectedWorks() {
                 {/* Expanded content */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-out ${
-                    isOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-[1600px] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="pb-10 pl-12 pr-4 space-y-6">
@@ -119,17 +120,8 @@ export default function SelectedWorks() {
                       </div>
                     )}
 
-                    {/* Link placeholder */}
-                    {project.link && project.link !== "#" && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-sans text-caption text-text-secondary hover:text-text-primary transition-colors pt-2"
-                      >
-                        View Project →
-                      </a>
-                    )}
+                    {/* Demo media + live/code links */}
+                    <ProjectDemo project={project} />
                   </div>
                 </div>
               </div>

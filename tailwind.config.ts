@@ -21,10 +21,11 @@ const config: Config = {
         "border-hover": "rgb(var(--border-hover) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Courier New", "monospace"],
-        heading: ["var(--font-sans)", "Courier New", "monospace"],
-        body: ["var(--font-sans)", "Courier New", "monospace"],
-        mono: ["var(--font-mono)", "Courier New", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        heading: ["var(--font-serif)", "Georgia", "serif"],
+        body: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
         /* Palantir-style: light weight, very tight tracking, large sizes */

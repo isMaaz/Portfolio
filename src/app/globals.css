@@ -2,51 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Theme tokens (space-separated RGB channels for Tailwind alpha support) ─── */
+/* ─── Theme tokens (space-separated RGB channels for Tailwind alpha support) ───
+ * Dark: deep blue-charcoal + warm cream text, echoing the World Labs mood.
+ * Lifted off pure black so the whole site reads softer and more premium.
+ * ──────────────────────────────────────────────────────────────────────────── */
 :root,
 [data-theme="dark"] {
-  --void: 0 0 0;
-  --surface: 10 10 10;
-  --surface-hover: 17 17 17;
-  --text-primary: 250 250 250;
-  --text-secondary: 113 113 122;
-  --accent: 250 250 250;
-  --signal-blue: 250 250 250;
-  --func-green: 34 197 94;
-  --border: 30 30 30;
-  --border-hover: 46 46 46;
+  --void: 15 19 28;            /* #0F131C — deep blue-charcoal, not black */
+  --surface: 22 27 39;         /* #161B27 — raised panel */
+  --surface-hover: 30 37 52;   /* #1E2534 */
+  --text-primary: 240 237 229; /* #F0EDE5 — warm cream */
+  --text-secondary: 148 156 173; /* #949CAD — muted blue-grey */
+  --accent: 240 237 229;       /* cream */
+  --signal-blue: 122 168 224;  /* #7AA8E0 — World Labs style dusty blue */
+  --func-green: 74 201 148;    /* softened mint */
+  --border: 38 45 61;          /* #262D3D — subtle blue border */
+  --border-hover: 56 66 88;    /* #384258 */
 
   /* Canvas graph particles */
-  --graph: 255 255 255;
+  --graph: 150 172 208;
 
   /* Scrollbar */
-  --scrollbar-track: 0 0 0;
-  --scrollbar-thumb: 34 34 34;
-  --scrollbar-thumb-hover: 68 68 68;
-
-  /* Both sans + mono resolve to the Courier test face */
-  --font-mono: var(--font-sans);
+  --scrollbar-track: 15 19 28;
+  --scrollbar-thumb: 40 48 64;
+  --scrollbar-thumb-hover: 64 76 100;
 }
 
 [data-theme="light"] {
-  --void: 255 255 255;
-  --surface: 245 245 246;
-  --surface-hover: 235 235 238;
-  --text-primary: 9 9 11;
-  --text-secondary: 82 82 91;
-  --accent: 9 9 11;
-  --signal-blue: 37 99 235;
-  --func-green: 22 163 74;
-  --border: 226 226 230;
-  --border-hover: 200 200 206;
+  --void: 244 240 231;         /* #F4F0E7 — warm cream canvas */
+  --surface: 236 231 219;      /* #ECE7DB */
+  --surface-hover: 228 222 208;
+  --text-primary: 28 30 38;    /* #1C1E26 — deep ink */
+  --text-secondary: 90 94 106; /* muted */
+  --accent: 28 30 38;
+  --signal-blue: 47 106 178;   /* #2F6AB2 — World Labs blue */
+  --func-green: 22 148 108;
+  --border: 214 207 191;       /* warm border */
+  --border-hover: 196 188 170;
 
   /* Canvas graph particles — dark on light */
-  --graph: 24 24 27;
+  --graph: 60 66 82;
 
   /* Scrollbar */
-  --scrollbar-track: 245 245 246;
-  --scrollbar-thumb: 212 212 216;
-  --scrollbar-thumb-hover: 161 161 170;
+  --scrollbar-track: 244 240 231;
+  --scrollbar-thumb: 214 207 191;
+  --scrollbar-thumb-hover: 180 172 154;
 }
 
 /* ─── Base reset ─── */
@@ -60,7 +60,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* smooth scrolling handled by Lenis (see SmoothScroll.tsx) */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;

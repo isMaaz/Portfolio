@@ -10,9 +10,27 @@ export const PERSONAL = {
   status: "Available for Projects & Collaborations",
   github: "https://github.com/MaazAkram76",
   githubUsername: "MaazAkram76",
-  duolingoUsername: "",
+  duolingoUsername: "MMaazAkram",
   email: "231192@students.au.edu.pk",
   linkedin: "https://www.linkedin.com/in/maaz-akram-b45713246/",
+} as const;
+
+/* ─── Duolingo streak (live pull) ──────────────────────────────────
+ * Duolingo's public API needs an authenticated JWT now, so the streak
+ * is pulled server-side via `/api/duolingo` using a token stored in the
+ * DUOLINGO_JWT env var. This reflects the REAL streak, so streak-freeze
+ * days are handled correctly (the number holds instead of climbing).
+ *
+ * `fallbackStreak` is shown only when the token is missing/expired, so
+ * the card never breaks — update it occasionally as a safety net.
+ * ─────────────────────────────────────────────────────────────────── */
+export const DUOLINGO = {
+  username: "MMaazAkram",
+  profileUrl: "https://www.duolingo.com/profile/MMaazAkram",
+  /** Last-known streak — shown only if the live pull is unavailable. Static (never auto-increments). */
+  fallbackStreak: 654,
+  /** Optional — e.g. "Spanish". Shown under the streak. */
+  learningLanguage: "",
 } as const;
 
 export const PROJECTS: Project[] = [

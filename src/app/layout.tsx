@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
-import { Courier_Prime } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
-/* ─── Font loading (Courier test — monospace across the whole site) ─── */
-const courier = Courier_Prime({
+/* ─── Font system ───────────────────────────────────────────────
+ * Fraunces  → elegant editorial serif for display headings
+ *             (close free match to the World Labs / "Marble" look)
+ * Inter     → clean modern sans for body copy
+ * JetBrains → real monospace for tiny code-style labels
+ * ─────────────────────────────────────────────────────────────── */
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "700"],
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 /* ─── Metadata ─── */
@@ -42,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={courier.variable}
+      className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -53,7 +71,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

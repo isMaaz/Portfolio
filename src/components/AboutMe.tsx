@@ -17,7 +17,7 @@ export default function AboutMe() {
           {/* Left — label */}
           <div className="lg:col-span-4">
             <p className="section-label">About</p>
-            <h2 className="font-sans text-h1 font-light text-text-primary">
+            <h2 className="font-serif text-h1 font-light text-text-primary">
               About Me
             </h2>
           </div>

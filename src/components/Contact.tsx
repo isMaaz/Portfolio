@@ -17,7 +17,7 @@ export default function Contact() {
           {/* Header */}
           <div>
             <p className="section-label">Contact</p>
-            <h2 className="font-sans text-h1 font-light text-text-primary">
+            <h2 className="font-serif text-h1 font-light text-text-primary">
               Let&apos;s work together.
             </h2>
             <p className="font-sans text-body-lg text-text-secondary mt-4">

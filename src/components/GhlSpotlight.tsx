@@ -21,7 +21,7 @@ export default function GhlSpotlight() {
           {/* Copy */}
           <div className="p-10 md:p-12 flex flex-col justify-center">
             <p className="section-label">Specialization</p>
-            <h2 className="font-sans text-h1 font-light text-text-primary">
+            <h2 className="font-serif text-h1 font-light text-text-primary">
               GoHighLevel
             </h2>
             <p className="font-sans text-body text-text-secondary mt-5 max-w-xl leading-relaxed">

@@ -10,6 +10,16 @@ export interface Project {
   description: string;
   features?: string[];
   link?: string;
+  /** Deployed / live site URL — renders a "Visit live site" button. */
+  liveUrl?: string;
+  /** Path to a demo clip (mp4/webm) served from /public, e.g. "/demos/foo.mp4". */
+  demoVideo?: string;
+  /** Path to a demo GIF, e.g. "/demos/foo.gif". */
+  demoGif?: string;
+  /** Path to a static screenshot, e.g. "/demos/foo.png". Also used as video poster. */
+  demoImage?: string;
+  /** GitHub repo URL for this project. */
+  repoUrl?: string;
 }
 
 export interface SkillCluster {

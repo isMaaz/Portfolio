@@ -48,7 +48,7 @@ export default function GhlContent() {
           </a>
 
           <p className="section-label">GoHighLevel Specialist</p>
-          <h1 className="font-sans text-display font-light text-text-primary whitespace-pre-line">
+          <h1 className="font-serif text-display font-light text-text-primary whitespace-pre-line">
             {GHL.tagline}
           </h1>
           <p className="font-sans text-body-lg text-text-secondary max-w-3xl mt-8">
@@ -79,7 +79,7 @@ export default function GhlContent() {
           <div className="grid grid-cols-2 md:grid-cols-4 mt-16 border-t border-l border-border">
             {GHL.stats.map((s) => (
               <div key={s.label} className="border-r border-b border-border p-6">
-                <p className="font-sans text-h1 font-light text-text-primary">
+                <p className="font-serif text-h1 font-light text-text-primary">
                   {s.value}
                 </p>
                 <p className="font-mono text-micro text-text-secondary mt-2 leading-snug">
@@ -142,7 +142,7 @@ export default function GhlContent() {
       <section className="py-section border-b border-border">
         <div className="section-container text-center">
           <p className="section-label justify-center">Let&apos;s Work Together</p>
-          <h2 className="font-sans text-h1 font-light text-text-primary max-w-3xl mx-auto">
+          <h2 className="font-serif text-h1 font-light text-text-primary max-w-3xl mx-auto">
             Need a GoHighLevel system that books calls while you sleep?
           </h2>
           <p className="font-sans text-body text-text-secondary mt-5 max-w-xl mx-auto">
@@ -226,7 +226,7 @@ function Section({
       >
         <div className="mb-12">
           <p className="section-label">{label}</p>
-          <h2 className="font-sans text-h1 font-light text-text-primary">
+          <h2 className="font-serif text-h1 font-light text-text-primary">
             {title}
           </h2>
           {subtitle && (

@@ -16,7 +16,7 @@ export default function ResearchLog() {
         {/* Section header */}
         <div className="mb-16">
           <p className="section-label">Research</p>
-          <h2 className="font-sans text-h1 font-light text-text-primary">
+          <h2 className="font-serif text-h1 font-light text-text-primary">
             Papers I&apos;ve Studied
           </h2>
           <p className="font-sans text-body text-text-secondary mt-4 max-w-2xl">

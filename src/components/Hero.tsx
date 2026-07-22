@@ -2,20 +2,28 @@
 
 import { PERSONAL } from "@/lib/constants";
 import NeuralBackground from "./NeuralBackground";
+import { useParallax } from "@/hooks/useParallax";
 
 /**
  * Section 1 — Hero
  * Palantir-style: massive light typography, static geometric mesh, stark contrast.
  */
 export default function Hero() {
+  const bgRef = useParallax<HTMLDivElement>(0.2);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center"
     >
-      {/* ── Static mesh background ── */}
+      {/* ── Parallax mesh background ── */}
       <div className="absolute inset-0 overflow-hidden">
-        <NeuralBackground />
+        <div
+          ref={bgRef}
+          className="absolute -top-[12%] left-0 right-0 h-[124%] will-change-transform"
+        >
+          <NeuralBackground />
+        </div>
       </div>
 
       {/* ── Content ── */}
@@ -33,7 +41,7 @@ export default function Hero() {
           </div>
 
           {/* Main headline */}
-          <h1 className="font-sans text-display font-light text-text-primary whitespace-pre-line">
+          <h1 className="font-serif text-display font-light text-text-primary whitespace-pre-line">
             {PERSONAL.tagline}
           </h1>
 
