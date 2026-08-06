@@ -40,6 +40,32 @@ export default function Contact() {
             </a>
 
             <a
+              href={`tel:+92${PERSONAL.phone.replace(/^0/, "")}`}
+              className="block group"
+            >
+              <p className="font-mono text-label uppercase tracking-widest text-text-secondary mb-1">
+                Phone
+              </p>
+              <p className="font-sans text-h3 text-text-primary group-hover:opacity-70 transition-opacity">
+                {PERSONAL.phone}
+              </p>
+            </a>
+
+            <a
+              href={`https://wa.me/92${PERSONAL.whatsapp.replace(/^0/, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <p className="font-mono text-label uppercase tracking-widest text-text-secondary mb-1">
+                WhatsApp
+              </p>
+              <p className="font-sans text-h3 text-text-primary group-hover:opacity-70 transition-opacity">
+                {PERSONAL.whatsapp}
+              </p>
+            </a>
+
+            <a
               href={PERSONAL.github}
               target="_blank"
               rel="noopener noreferrer"

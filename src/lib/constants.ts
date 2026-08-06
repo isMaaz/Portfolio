@@ -7,11 +7,13 @@ export const PERSONAL = {
   intro: "I build intelligent automation systems, AI-driven workflows, full-stack learning tools, and applied ML projects across NLP, computer vision, and biomedical signals.",
   subtitle: "BS Artificial Intelligence @ Air University - 6th Semester",
   location: "Islamabad, Pakistan",
-  status: "Available for Projects & Collaborations",
+  status: "Open to Automation Engineering Roles · Remote",
   github: "https://github.com/MaazAkram76",
   githubUsername: "MaazAkram76",
   duolingoUsername: "MMaazAkram",
-  email: "231192@students.au.edu.pk",
+  email: "muhammadmaazsaat@gmail.com",
+  phone: "03175162896",
+  whatsapp: "03279940377",
   linkedin: "https://www.linkedin.com/in/maaz-akram-b45713246/",
 } as const;
 
@@ -268,12 +270,10 @@ export const TICKER_ITEMS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { label: "Projects", href: "/#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "GoHighLevel", href: "/ghl" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Research", href: "/#research" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 /* ─── GoHighLevel portfolio ─── */

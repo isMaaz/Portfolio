@@ -1,0 +1,114 @@
+%==============================================================
+%  Muhammad Maaz Akram — CV
+%  Tailored for: Junior Automation Engineer (360 Signum)
+%  Compile: Overleaf (pdfLaTeX) — or `pdflatex Muhammad_Maaz_Akram_CV.tex`
+%  Uses only common packages so it builds anywhere.
+%==============================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+% ---- Colours ----
+\definecolor{ink}{HTML}{1C1E26}
+\definecolor{accent}{HTML}{2F6AB2}
+\definecolor{muted}{HTML}{5A5E6A}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% ---- Section styling ----
+\titleformat{\section}
+  {\color{accent}\large\bfseries\scshape}
+  {}{0em}{}[\vspace{-0.6em}\color{accent}\rule{\textwidth}{0.8pt}\vspace{-0.2em}]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt}
+\newcommand{\dtitle}[2]{\textbf{#1}\hfill{\color{muted}\small #2}\\}
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\color{ink}
+
+\begin{document}
+
+%==================== HEADER ====================
+{\Huge\bfseries Muhammad Maaz Akram}\\[2pt]
+{\large\color{accent} Automation Engineer \textbullet\ AI Student}\\[6pt]
+{\small
+\href{mailto:muhammadmaazsaat@gmail.com}{muhammadmaazsaat@gmail.com} \ \textbullet\ \
+Phone: +92 317 5162896 \ \textbullet\ \ WhatsApp: +92 327 9940377 \ \textbullet\ \ Islamabad, Pakistan (Remote)\\[3pt]
+\href{https://github.com/MaazAkram76}{github.com/MaazAkram76} \ \textbullet\ \
+\href{https://www.linkedin.com/in/maaz-akram-b45713246/}{linkedin.com/in/maaz-akram-b45713246} \ \textbullet\ \
+\href{https://PORTFOLIO-URL}{Portfolio} % TODO: replace PORTFOLIO-URL with your live site
+}
+
+%==================== SUMMARY ====================
+\section{Summary}
+Automation engineer and final-year BS Artificial Intelligence student with hands-on experience building
+AI-powered, event-driven workflows using \textbf{n8n}, \textbf{Make.com}, \textbf{Zapier}, and GoHighLevel.
+Comfortable wiring \textbf{REST APIs} and \textbf{webhooks}, shaping \textbf{JSON} with \textbf{JavaScript}, and
+integrating \textbf{LLMs (OpenAI, Claude)} into production automations. 30+ workflows shipped across lead
+generation, CRM, and multi-channel outreach. Version control with \textbf{Git}. Eager to ship scalable, smart
+automations on a fast-moving team.
+
+%==================== SKILLS ====================
+\section{Technical Skills}
+\begin{tabular}{@{}>{\bfseries}p{4.2cm} p{12.5cm}@{}}
+Automation Platforms & n8n, Make.com, Zapier, GoHighLevel \\
+APIs \& Integration   & REST APIs, Webhooks, JSON, HTTP, OAuth, cron/scheduled triggers \\
+Programming           & JavaScript, Python, TypeScript, FastAPI, Git \& GitHub \\
+AI / LLM              & OpenAI, Claude, prompt engineering, RAG, vector stores (Supabase) \\
+Data \& Tools         & pandas, OCR, Google Sheets / Excel pipelines, Postman \\
+\end{tabular}
+
+%==================== AUTOMATION PROJECTS ====================
+\section{Automation Projects}
+
+\dtitle{AI Automated Email Reply Engine — n8n + GoHighLevel}{n8n, OpenAI, Supabase, Webhooks}
+\begin{itemize}
+  \item Built a webhook-triggered n8n pipeline that ingests inbound emails, finds/creates the CRM contact, and dispatches an AI-generated reply back into GoHighLevel.
+  \item Backed the agent with an OpenAI chat model, conversation memory, and a Supabase vector store (RAG) for context-aware, on-brand responses.
+\end{itemize}
+
+\dtitle{Multi-Channel Outreach Automation System}{n8n, GoHighLevel, OpenAI, REST APIs}
+\begin{itemize}
+  \item Engineered an outreach pipeline: LinkedIn lead extraction, API-driven enrichment, and multi-channel sending across LinkedIn and email.
+  \item Added LLM-based automated reply handling for inbound leads, cutting manual ops while keeping campaigns scalable.
+\end{itemize}
+
+\dtitle{Apollo Lead-Gen $\rightarrow$ GHL CRM Pipeline}{n8n, Apollo API, JavaScript, Sheets}
+\begin{itemize}
+  \item Pulled targeted leads from the Apollo Search API, enriched and transformed them in JavaScript code nodes, logged to Google Sheets, and synced each contact straight into GoHighLevel.
+\end{itemize}
+
+\dtitle{AI Social Content Engine}{n8n, AI image/text, Social Planner APIs}
+\begin{itemize}
+  \item Scheduled n8n workflow that plans a content calendar, generates posts and images with AI, stores assets in Drive/GHL, and auto-publishes to Facebook, Instagram, LinkedIn, Pinterest, and Bluesky.
+\end{itemize}
+
+\dtitle{Real Estate CRM \& Smart Lead Routing}{GoHighLevel, Zapier, Webhooks, Twilio}
+\begin{itemize}
+  \item Routed inbound leads to the right agents and triggered timed follow-up and scheduling sequences, reducing response delays and standardizing CRM operations.
+\end{itemize}
+
+%==================== SELECTED AI / ML ====================
+\section{Selected AI / ML Projects}
+\begin{itemize}
+  \item \textbf{FastAPI Product Inventory Manager} — typed REST endpoints, Pydantic models, CRUD + query filtering, React front end via Fetch API.
+  \item \textbf{Multilingual Fake News Detection (NLP)} — English/Urdu classification pipeline (TF-IDF + Logistic Regression, BiGRU); 83.9\% accuracy with adversarial robustness checks.
+  \item \textbf{EEG Signal Classification} — subject-aware biomedical pipeline comparing Random Forest (87\%) vs a patch-based Transformer.
+\end{itemize}
+
+%==================== EDUCATION ====================
+\section{Education}
+\dtitle{BS Artificial Intelligence — Air University, Islamabad}{6th Semester \textbullet\ Expected 2027}
+
+\vspace{2pt}
+{\small\color{muted} Portfolio with live automation walkthroughs and a dedicated GoHighLevel showcase available on request.}
+
+\end{document}
