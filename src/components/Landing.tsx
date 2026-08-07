@@ -167,7 +167,7 @@ export default function Landing() {
         <h2>Let&apos;s make<br /><i>something move.</i></h2>
         <p className="cinema-end__copy">Have a tangled workflow, a strange idea, or a problem that refuses to stay solved? Send the first frame.</p>
         <a className="cinema-end__email" href={`mailto:${PERSONAL.email}`}>{PERSONAL.email} <Arrow /></a>
-        <footer className="cinema-footer"><span>© 2026 MAAZ AKRAM</span><span>AI × AUTOMATION / ISLAMABAD</span><a href="/about">ABOUT THE BUILDER ↗</a></footer>
+        <footer className="cinema-footer"><span>© 2026 MAAZ AKRAM</span><span>AI × AUTOMATION / ISLAMABAD</span><a href="/blog">NOTEBOOK ↗</a><a href="/about">ABOUT THE BUILDER ↗</a></footer>
       </section>
     </main>
   );

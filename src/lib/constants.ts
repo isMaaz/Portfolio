@@ -272,6 +272,7 @@ export const TICKER_ITEMS = [
 export const NAV_LINKS = [
   { label: "Projects", href: "/projects" },
   { label: "GoHighLevel", href: "/ghl" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;

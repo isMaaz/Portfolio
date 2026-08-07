@@ -9,3 +9,7 @@ next-env.d.ts
 
 # Raw source screenshots — deployed copies live in public/ghl
 Images/
+
+# Raw Obsidian vault for the CUDA notes — published copies live in
+# src/content/blog/cuda and public/blog/cuda
+/CUDA/
