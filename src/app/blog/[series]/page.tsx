@@ -80,6 +80,40 @@ export default function SeriesPage({ params }: { params: { series: string } }) {
               </a>
             ))}
           </div>
+
+          {/* Source material — linked to the publisher, not re-hosted */}
+          {series.references?.length ? (
+            <div className="mt-20">
+              <p className="section-label">Source material</p>
+              <div className="grid sm:grid-cols-2 gap-px bg-border border border-border">
+                {series.references.map((ref) => (
+                  <a
+                    key={ref.href}
+                    href={ref.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-void hover:bg-surface transition-colors p-7"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="font-serif text-h3 text-text-primary">
+                        {ref.label}
+                      </h3>
+                      <span className="font-mono text-caption text-text-secondary group-hover:text-signal-blue transition-colors">
+                        ↗
+                      </span>
+                    </div>
+                    <p className="mt-3 font-body text-caption text-text-secondary">
+                      {ref.note}
+                    </p>
+                  </a>
+                ))}
+              </div>
+              <p className="mt-5 font-mono text-micro text-text-secondary">
+                Published by NVIDIA — linked to the official source so it stays
+                current.
+              </p>
+            </div>
+          ) : null}
         </section>
       </main>
       <TrainingFooter />

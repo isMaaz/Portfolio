@@ -20,6 +20,13 @@ export interface BlogPost {
   topics: string[];
 }
 
+export interface BlogReference {
+  label: string;
+  href: string;
+  /** Short line explaining what the reference is */
+  note: string;
+}
+
 export interface BlogSeries {
   slug: string;
   title: string;
@@ -28,6 +35,8 @@ export interface BlogSeries {
   description: string;
   /** Longer intro shown on the series page */
   intro: string;
+  /** Source material the series is worked through — linked, never re-hosted */
+  references?: BlogReference[];
   posts: BlogPost[];
 }
 
@@ -40,6 +49,18 @@ export const BLOG_SERIES: BlogSeries[] = [
       "Working through GPU architecture and the CUDA programming model from first principles — notes, diagrams, and the analogies that made it click.",
     intro:
       "I'm learning CUDA from the ground up: how GPUs actually differ from CPUs at the transistor level, how the host and device split work between them, and how kernels turn one function into thousands of parallel threads. These are my raw study notes — written in my own words as I go, with the parts I had to re-read until they made sense.",
+    references: [
+      {
+        label: "CUDA Programming Guide — online",
+        href: "https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html",
+        note: "NVIDIA's official guide, always the current version. The primary text I'm working through.",
+      },
+      {
+        label: "CUDA Programming Guide — PDF",
+        href: "https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf",
+        note: "Same guide as a PDF — opens straight in the browser for reading offline or side-by-side.",
+      },
+    ],
     posts: [
       {
         slug: "day-01",

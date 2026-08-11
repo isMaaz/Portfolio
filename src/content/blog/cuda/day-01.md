@@ -114,3 +114,7 @@ A **thread** here is one individual worker executing that task. So launching a k
 In the analogy: instead of handing "chop onions" to one cook, the manager instantly clones that instruction to 1000 cooks, and each chops their own onion at the same moment.
 
 This is the literal mechanism behind "highly parallel computation" — one function (kernel), many threads (workers) running it at once.
+
+## Source
+
+The quoted passages come from NVIDIA's [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html) — also available as a [PDF](https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf). Everything else here is my own working-through of it.
